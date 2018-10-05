@@ -3,5 +3,5 @@ RUN mkdir -p /python_code/src
 WORKDIR /python_code/src
 COPY index.html /python_code/src/index.html
 COPY config.yaml config.yaml
-EXPOSE 8000
+EXPOSE 8000 80
 CMD ["python","-m","http.server"]
