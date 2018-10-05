@@ -6,7 +6,7 @@ provider "kubernetes" {
 }
 
 output "port" {
-  value = "${kubernetes_service.jenkins.spec.0.port.0.node_port}"
+  value = "${kubernetes_service.jenkins-config.spec.0.port.0.node_port}"
 }
 
 resource "kubernetes_service" "jenkins-config" {
@@ -16,7 +16,7 @@ resource "kubernetes_service" "jenkins-config" {
 
   spec {
     selector {
-      app = "${kubernetes_pod.jenkinsConfig.metadata.0.labels.app}"
+      app = "${kubernetes_pod.jenkins-config.metadata.0.labels.app}"
     }
 
     port {
